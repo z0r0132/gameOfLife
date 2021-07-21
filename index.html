@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="./life.js"></script>
+    <script>
+      var blinker = [
+        [false, false, false, false, false],
+        [false, false, true, false, false],
+        [false, false, true, false, false],
+        [false, false, true, false, false],
+        [false, false, false, false, false]
+      ];
+      var toad = [
+    [false, false, false, false, false, false],
+    [false, false, false, false, false, false],
+    [false, false, true, true, true, false],
+    [false, true, true, true, false, false],
+    [false, false, false, false, false, false],
+    [false, false, false, false, false, false],
+]
+      var random = [...Array(25)].map(e => Array(25));
+for (i=0; i< 25; i++){
+    for(j=0;j<25; j++){
+        random[i][j] = Math.random() >= 0.5;
+    }
+}
+      main(random);
+    </script>
+    <div id="root" style="border: 1px solid black;"></div>
+  </body>
+</html>

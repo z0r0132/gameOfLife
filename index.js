@@ -1,59 +1,24 @@
-/**
- * Get the number of alive neighbor cells
- *
- * @param {Object} currentCellPositions
- * @param {Number} currentCellPositions.x
- * @param {Number} currentCellPositions.y
- * @param {Array} currentBoard 2 dimension array
- *
- * @returns {Number} number of alive neighbor cells
- */
-function getAliveNeighborsNumber(currentCellPositions, currentBoard) {
-  return 0;
-}
+var life = require("./life");
 
-/**
- * Get the new value depending of the neighbors
- *
- * @param {Boolean} currentValue
- * @param {Number} aliveNeighborsNumber
- *
- * @returns {Boolean} new value
- */
-function getNewValue(currentValue, aliveNeighborsNumber) {
-  return (
-    aliveNeighborsNumber === 3 || (currentValue && aliveNeighborsNumber === 2)
-  );
+var blinker = [
+    [false, false, false, false, false],
+    [false, false, true, false, false],
+    [false, false, true, false, false],
+    [false, false, true, false, false],
+    [false, false, false, false, false]
+]
+var toad = [
+    [false, false, false, false, false, false],
+    [false, false, false, false, false, false],
+    [false, false, true, true, true, false],
+    [false, true, true, true, false, false],
+    [false, false, false, false, false, false],
+    [false, false, false, false, false, false],
+]
+var random = [...Array(25)].map(e => Array(25));
+for (i=0; i< 25; i++){
+    for(j=0;j<25; j++){
+        random[i][j] = Math.random() >= 0.5;
+    }
 }
-
-/**
- * get new board for a frame
- *
- * @param {Array} currentBoard
- * @returns {Array} newBoard
- */
-function getNewBoard(currentBoard) {
-  //go throw every cell
-  // check neighbors using getNeighbors
-  // get new value of the cell using getNewValue
-  let newBoard = [];
-  return newBoard;
-}
-
-/**
- * get board in a way to visualize
- * @param {Array} board
- * @returns {String} Visible form of the board ( Maybe Dom Element )
- */
-function drawBoard(board) {
-  //display the board for every frame
-  return "<div></div>";
-}
-
-function main() {
-  // run getNewBoard unless the board is not changing from a frame to other.
-  //draw board
-}
-module.exports = {
-  getNewValue: getNewValue
-};
+life.main(blinker);
