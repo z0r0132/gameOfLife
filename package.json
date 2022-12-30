@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/z0r0132/gameOfLife#readme",
   "devDependencies": {
-    "mocha": "^7.0.0"
+    "mocha": "^10.2.0"
   }
 }
